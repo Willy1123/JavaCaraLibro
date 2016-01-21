@@ -30,7 +30,14 @@ public class VentanaLogin extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        nombreRegistro = new javax.swing.JTextField();
+        apellidosRegistro = new javax.swing.JTextField();
+        emailRegistro = new javax.swing.JTextField();
+        emailConfirmacionRegistro = new javax.swing.JTextField();
+        contraseñaRegistro = new javax.swing.JTextField();
+        diaRegistro = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,14 +51,81 @@ public class VentanaLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 30, 60, 30));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 30, 160, 30));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 30, 160, 30));
+
+        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1047, 37, 141, 20));
+
+        jTextField2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1219, 37, 142, 20));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/WillyBook.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/facebook.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/facebookTroll.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1900, 920));
+        nombreRegistro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        nombreRegistro.setForeground(new java.awt.Color(153, 153, 153));
+        nombreRegistro.setText("Nombre");
+        nombreRegistro.setBorder(null);
+        nombreRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                nombreRegistroMousePressed(evt);
+            }
+        });
+        getContentPane().add(nombreRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 210, 177, 23));
+
+        apellidosRegistro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        apellidosRegistro.setForeground(new java.awt.Color(153, 153, 153));
+        apellidosRegistro.setText("Apellidos");
+        apellidosRegistro.setBorder(null);
+        apellidosRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                apellidosRegistroMousePressed(evt);
+            }
+        });
+        getContentPane().add(apellidosRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(1255, 210, 177, 23));
+
+        emailRegistro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        emailRegistro.setForeground(new java.awt.Color(153, 153, 153));
+        emailRegistro.setText("Correo electrónico o número de móvil");
+        emailRegistro.setBorder(null);
+        emailRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                emailRegistroMousePressed(evt);
+            }
+        });
+        getContentPane().add(emailRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 260, 380, 23));
+
+        emailConfirmacionRegistro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        emailConfirmacionRegistro.setForeground(new java.awt.Color(153, 153, 153));
+        emailConfirmacionRegistro.setText("Vuelve a introducir el correo electrónico o el ...");
+        emailConfirmacionRegistro.setBorder(null);
+        emailConfirmacionRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                emailConfirmacionRegistroMousePressed(evt);
+            }
+        });
+        getContentPane().add(emailConfirmacionRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 310, 380, 23));
+
+        contraseñaRegistro.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        contraseñaRegistro.setForeground(new java.awt.Color(153, 153, 153));
+        contraseñaRegistro.setText("Contraseña nueva");
+        contraseñaRegistro.setBorder(null);
+        contraseñaRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                contraseñaRegistroMousePressed(evt);
+            }
+        });
+        getContentPane().add(contraseñaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 360, 380, 23));
+
+        diaRegistro.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        diaRegistro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Día", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        diaRegistro.setOpaque(false);
+        getContentPane().add(diaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(1041, 431, 56, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/WillyBookLogin.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1900, 870));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -68,6 +142,27 @@ public class VentanaLogin extends javax.swing.JFrame {
             new LoginIncorrecto().setVisible(true);
         }
     }//GEN-LAST:event_jButton1MousePressed
+
+    private void nombreRegistroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreRegistroMousePressed
+        // TODO add your handling code here:
+        nombreRegistro.setText("");
+    }//GEN-LAST:event_nombreRegistroMousePressed
+
+    private void apellidosRegistroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_apellidosRegistroMousePressed
+        apellidosRegistro.setText("");
+    }//GEN-LAST:event_apellidosRegistroMousePressed
+
+    private void emailRegistroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailRegistroMousePressed
+        emailRegistro.setText("");
+    }//GEN-LAST:event_emailRegistroMousePressed
+
+    private void emailConfirmacionRegistroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailConfirmacionRegistroMousePressed
+        emailConfirmacionRegistro.setText("");
+    }//GEN-LAST:event_emailConfirmacionRegistroMousePressed
+
+    private void contraseñaRegistroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contraseñaRegistroMousePressed
+        contraseñaRegistro.setText("");
+    }//GEN-LAST:event_contraseñaRegistroMousePressed
 
     /**
      * @param args the command line arguments
@@ -105,10 +200,17 @@ public class VentanaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField apellidosRegistro;
+    private javax.swing.JTextField contraseñaRegistro;
+    private javax.swing.JComboBox<String> diaRegistro;
+    private javax.swing.JTextField emailConfirmacionRegistro;
+    private javax.swing.JTextField emailRegistro;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nombreRegistro;
     // End of variables declaration//GEN-END:variables
 }
